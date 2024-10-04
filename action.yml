@@ -1,24 +1,11 @@
-name: "A very cool action"
-description: "Does the very cool thing in a cool way"
-
-inputs:
-  node-version:
-    description: "What version to install?"
-    type: string
-    required: false
-    default: latest
-
-outputs:
-  npm-version:
-    description: "The version of NPM installed"
-    value: ${{ steps.something.outputs.npm-version }}
+name: "Install the action-validator with asdf"
+description: "Only exists to not duplicate the hardcoding of the action-validator version"
 
 runs:
   using: "composite"
   steps:
-    - name: Use Node.js ${{ inputs.node-version }}
-      uses: actions/setup-node@v4.0.4
-      id: something
+    - name: Install action-validator with asdf
+      uses: asdf-vm/actions/install@v3
       with:
-        node-version: ${{ inputs.node-version }}
-        cache: 'pnpm'
+        tool_versions: |
+          action-validator 0.5.1
