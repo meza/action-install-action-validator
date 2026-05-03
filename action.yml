@@ -5,7 +5,4 @@ runs:
   using: "composite"
   steps:
     - name: Install action-validator with asdf
-      uses: asdf-vm/actions/install@v4.0.1
-      with:
-        tool_versions: |
-          action-validator 0.9.0
+      uses: asdf-vm/actions/setup@v4
