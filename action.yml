@@ -4,5 +4,10 @@ description: "Only exists to not duplicate the hardcoding of the action-validato
 runs:
   using: "composite"
   steps:
-    - name: Install action-validator with asdf
+    - name: Install asdf
       uses: asdf-vm/actions/setup@v4
+    - name: Install action-validator with asdf
+      uses: asdf-vm/actions/install@v4
+      with:
+        tool_versions: |
+          action-validator latest
